@@ -1,0 +1,5 @@
+https://docs.google.com/presentation/d/1c6WPuLs3XymGqFOUP_ZW0Hx6P4JDMzcBxUOdFkOvt54/edit#slide=id.p1
+
+https://docs.microsoft.com/pt-br/sql/t-sql/functions/functions?view=sql-server-ver15
+
+https://www.devmedia.com.br/funcoes-uteis-do-sql-server/23459
