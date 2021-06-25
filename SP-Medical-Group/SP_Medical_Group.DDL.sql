@@ -22,7 +22,7 @@ CREATE TABLE clinica
 (
 	idClinica		INT PRIMARY KEY IDENTITY
 	,nome			VARCHAR(200) NOT NULL UNIQUE
-	,cnpj			CHAR(14) NOT NULL
+	,cnpj			CHAR(14) NOT NULL UNIQUE
 	,razaoSocial	VARCHAR(200) NOT NULL
 	,endereco		VARCHAR(200) NOT NULL
 );
@@ -34,7 +34,7 @@ CREATE TABLE usuario
 	,idTipoUsuario		INT FOREIGN KEY REFERENCES tipoUsuario
 	,nome				VARCHAR(200) NOT NULL UNIQUE
 	,email				VARCHAR(200) NOT NULL UNIQUE
-	,senha				VARCHAR(50) 
+	,senha				VARCHAR(50) NOT NULL
 );
 GO
 
@@ -45,8 +45,8 @@ CREATE TABLE paciente
 	,nomePaciente		VARCHAR(200) NOT NULL UNIQUE
 	,dataNascimento		DATETIME NOT NULL
 	,telefone			VARCHAR(14) 
-	,rg					VARCHAR(14) NOT NULL
-	,cpf				CHAR(11) NOT NULL
+	,rg					VARCHAR(14) NOT NULL UNIQUE
+	,cpf				CHAR(11) NOT NULL UNIQUE
 	,endereco			VARCHAR(200) NOT NULL
 );
 GO
@@ -58,7 +58,7 @@ CREATE TABLE medico
 	,idUsuario			INT FOREIGN KEY REFERENCES usuario
 	,idEspecialidade	INT FOREIGN KEY REFERENCES especialidade
 	,idClinica			INT FOREIGN KEY REFERENCES clinica
-	,crm				VARCHAR(12)
+	,crm				VARCHAR(12) UNIQUE
 );
 GO
 
@@ -67,6 +67,6 @@ CREATE TABLE consulta
 	idConsulta			INT PRIMARY KEY IDENTITY
 	,idPaciente			INT FOREIGN KEY REFERENCES paciente
 	,idMedico			INT FOREIGN KEY REFERENCES medico
-	,situacao			VARCHAR(20)
+	,situacao			VARCHAR(20) NOT NULL
 );
 GO

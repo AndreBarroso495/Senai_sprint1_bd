@@ -19,6 +19,3 @@ SELECT * FROM tipoUsuario;
 GO
 
 SELECT * FROM clinica;
-GO
-
-

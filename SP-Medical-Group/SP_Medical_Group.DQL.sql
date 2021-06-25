@@ -31,23 +31,24 @@ INSERT INTO clinica
 VALUES		('Clinica Possarle', '89400902000130', 'SP Medical Group', 'Av. Barão de Limeira, 532, São Paulo - SP');
 GO
 
-INSERT INTO usuario (idTipoUsuario, nome, email)
-VALUES		(2, 'Ricardo Lemos', 'ricardo.lemos@spmedicalgroup.com.br')
-			,(2, 'Roberto Possarle', 'roberto.possarle@spmedicalgroup.com.br')
-			,(2, 'Helena Strada', 'helena.souza@spmedicalgroup.com.br')
-			,(3, 'Ligia', 'ligia@gmail.com')
-			,(3, 'Alexandre', 'alexandre@gmail.com')
-			,(3, 'Fernando', 'fernando@gmail.com')
-			,(3, 'Henrique', 'henrique@gmail.com')
-			,(3, 'João', 'joao@hotmail.com')
-			,(3, 'Bruno', 'bruno@gmail.com')
-			,(3, 'Mariana', 'mariana@outlook.com');
+INSERT INTO usuario (idTipoUsuario, nome, email, senha)
+VALUES		(1, 'Administrador', 'adm@adm.com', 'adm123')
+			,(2, 'Ricardo Lemos', 'ricardo.lemos@spmedicalgroup.com.br', 'ricardo123')
+			,(2, 'Roberto Possarle', 'roberto.possarle@spmedicalgroup.com.br', 'roberto123')
+			,(2, 'Helena Strada', 'helena.souza@spmedicalgroup.com.br', 'helena123')
+			,(3, 'Ligia', 'ligia@gmail.com', 'ligia123')
+			,(3, 'Alexandre', 'alexandre@gmail.com', 'alexandre123')
+			,(3, 'Fernando', 'fernando@gmail.com', 'fernando123')
+			,(3, 'Henrique', 'henrique@gmail.com', 'henrique123')
+			,(3, 'João', 'joao@hotmail.com', 'joao123')
+			,(3, 'Bruno', 'bruno@gmail.com', 'bruno123')
+			,(3, 'Mariana', 'mariana@outlook.com', 'mariana123');
 GO
 
-INSERT INTO medico
-VALUES		('Ricardo Lemos', 1, 2, 1, '54356-SP')
-			,('Roberto Possarle', 2, 17, 1, '53452-SP')
-			,('Helena Strada', 3, 16, 1, '65463-SP');
+INSERT INTO medico (nomeMedico, idUsuario, idEspecialidade, idClinica, crm)
+VALUES		('Ricardo Lemos', 2, 2, 1, '54356-SP')
+			,('Roberto Possarle', 3, 17, 1, '53452-SP')
+			,('Helena Strada', 4, 16, 1, '65463-SP');
 GO
 
 INSERT INTO paciente
